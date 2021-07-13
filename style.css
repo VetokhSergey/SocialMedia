@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.socialMedia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    transition: .5s;
+}
+
+.socialMediaIcons {
+    position: relative;
+    display: flex;
+}
+
+.socialMediaIcons li {
+    list-style: none;
+}
+
+.socialMediaIcons li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    width: 120px;
+    height: 120px;
+    background: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    margin: 20px;
+    font-size: 4em;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    box-shadow: 0 25px 35px rgba( 0, 0, 0, 0.1);
+    transition: background .3s ease-in-out;
+}
+
+.js-tilt-glare {
+    border-radius: 10px;
+}
+
+.socialMediaIcons li a:hover.facebook {
+    background: #1877f2;
+}
+
+.socialMediaIcons li a:hover.youtube {
+    background: #ff0000;
+}
+
+.socialMediaIcons li a:hover.instagram {
+    background: #e4405f;
+}
+
+.socialMediaIcons li a:hover.twitter {
+    background: #0099ff;
+}
+
+.socialMediaIcons li a .fa {
+    pointer-events: none;
+    transition: .3s;
+}
+
+.socialMediaIcons li a:hover .fa{
+    color: #fff;
+    transform: scale(1.5) translateZ(50px);
+}
+
+.socialMediaIcons li::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% + 120px));
+    font-size: 5vw;
+    font-weight: 700;
+    pointer-events: none;
+    transition: .5s;
+    opacity: 0;
+}
+
+.socialMediaIcons li:hover::before {
+    opacity: 0.1;
+    transform: translate(-50%, calc(-50% + 150px));
+}
